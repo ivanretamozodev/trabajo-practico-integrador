@@ -1,0 +1,16 @@
+:root{
+    /* 
+    * Variables globales 
+    */
+
+    --primary-color: "alguna propiedad global"
+}
+
+/* 
+*Reseteo Basico de paddings y margins
+*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
