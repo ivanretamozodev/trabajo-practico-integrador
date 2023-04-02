@@ -1,7 +1,231 @@
-body {
-  color: white;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700&display=swap"); /* 
+    *COLORS
+*/
+/* 
+    *OTHERS
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-* {
-  background-color: red;
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f6f6fe;
+  color: #34355c;
+}
+
+a {
+  color: #34355c;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  padding: 1rem;
+}
+.nav .menu-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.nav .menu-nav__item a:hover {
+  border-bottom: 1px solid #34355c;
+}
+.nav .menu-nav__item button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #4d6bff;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.nav .menu-nav__item button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.hero {
+  max-width: 992px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.hero__text h2 {
+  font-size: 2.5rem;
+  letter-spacing: 1.5px;
+  color: #34355c;
+}
+.hero__text p {
+  margin: 2rem 0rem;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+.hero__text button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #4d6bff;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.hero__text button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.hero__image {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__image {
+    display: block;
+    padding: 0rem 1.25rem;
+    position: relative;
+  }
+  .hero__image .blob1 {
+    position: absolute;
+    bottom: 0rem;
+    width: 100%;
+    left: 0;
+    z-index: -1;
+  }
+  .hero__image .blob2 {
+    position: absolute;
+    width: 100%;
+    top: 1rem;
+    left: 0;
+    z-index: -5;
+  }
+}
+.trusted {
+  max-width: 992px;
+  padding: 1rem;
+}
+.trusted__title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.trusted__logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.trusted__logos img {
+  width: 90px;
+}
+
+@media screen and (min-width: 768px) {
+  .trusted__title {
+    font-size: 2.3rem;
+  }
+  .trusted__logos {
+    gap: 2rem;
+  }
+  .trusted__logos img {
+    width: 120px;
+  }
+}
+.services {
+  max-width: 992px;
+  padding: 1rem;
+}
+.services__title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.services-container .services__card {
+  border: 1px solid #bebebe;
+  border-radius: 0.4rem;
+  width: 320px;
+  padding: 0.5rem;
+}
+.services-container .services__card--logo {
+  text-align: center;
+  border-radius: 0.4rem;
+}
+.services-container .services__card--logo i {
+  font-size: 56px;
+  color: #31a9fd;
+}
+.services-container .services__card--title {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.services-container .services__card--paragraph {
+  text-align: center;
+  line-height: 1.3;
+}
+
+@media screen and (min-width: 768px) {
+  .services__title {
+    font-size: 2.3rem;
+  }
+}
+.newsletter {
+  background-color: #f6f6fe;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  max-width: 992px;
+}
+.newsletter__title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.newsletter__paragraph {
+  font-size: 0.9rem;
+  text-align: center;
+}
+.newsletter__inputs {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.newsletter__inputs form {
+  padding: 1rem;
+}
+.newsletter__inputs form input {
+  padding: 0.75rem 1.6rem;
+}
+.newsletter__inputs form button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #4d6bff;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.newsletter__inputs form button:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

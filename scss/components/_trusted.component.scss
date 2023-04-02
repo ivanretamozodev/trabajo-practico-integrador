@@ -1,0 +1,31 @@
+.trusted {
+  max-width: $max-width;
+  padding: 1rem;
+  &__title {
+    @include subtitle();
+  }
+  &__logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    img {
+      width: 90px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .trusted {
+    &__title {
+      font-size: 2.3rem;
+    }
+
+    &__logos {
+      gap: 2rem;
+      img {
+        width: 120px;
+      }
+    }
+  }
+}

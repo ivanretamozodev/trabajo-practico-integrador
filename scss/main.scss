@@ -1,4 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700&display=swap");
+
+@import "./variables/variables";
+@import "./mixins/mixins";
+@import "./utilities/global";
+@import "./components/navbar.component";
 @import "./components/hero.component";
-* {
-  background-color: red;
-}
+@import "./components/trusted.component";
+@import "./components/services.component";
+@import "./components/newsletter.component";

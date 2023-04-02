@@ -5,9 +5,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TP</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <h2>hola</h2>
+    <div class="page">
+      <!-- Navbar -->
+      <header>
+        <nav class="nav">
+          <ul class="menu-nav">
+            <li class="menu-nav__item">
+              <a class="menu-nav__link" href="#hero">Inicio</a>
+            </li>
+            <li class="menu-nav__item">
+              <a class="menu-nav__link" href="#">Nosotros</a>
+            </li>
+            <li class="menu-nav__item">
+              <a class="menu-nav__link" href="#">Trabajos</a>
+            </li>
+            <li class="menu-nav__item">
+              <a class="menu-nav__link" href="#services">Servicios</a>
+            </li>
+            <li class="menu-nav__item">
+              <a class="menu-nav__link" href="#">Testimonios</a>
+            </li>
+            <li class="menu-nav__item">
+              <button>Contactenos</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- HeroComponent -->
+      <section class="hero">
+        <div class="hero__text">
+          <h2>Encuentra la Mejor Solución Para tus Idéas</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit est
+            dolorem ea suscipit quisquam
+          </p>
+          <button>Contactenos</button>
+        </div>
+        <div class="hero__image">
+          <img src="./assets/img/hero3.png" alt="" />
+          <img class="blob1" src="./assets/img/blob.svg" alt="" />
+          <img class="blob2" src="./assets/img/blob2.svg" alt="" />
+        </div>
+      </section>
+      <!-- TRUSTED COMPONENT -->
+      <section class="trusted">
+        <h2 class="trusted__title">Socios De Confianza</h2>
+
+        <div class="trusted__logos">
+          <img src="./assets/logos/google.png" alt="google logo" />
+          <img src="./assets/logos/amazon.png" alt="amazon logo" />
+          <img src="./assets/logos/hp.png" alt="hp logo" />
+          <img src="./assets/logos/sony.png" alt="hp logo" />
+        </div>
+      </section>
+      <!-- SERVICES COMPONENT -->
+      <section id="services" class="services">
+        <h2 class="services__title">Nuestros Servicios</h2>
+        <div class="services-container">
+          <div class="services__card">
+            <div class="services__card--logo">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <h4 class="services__card--title">Desarrollo Web</h4>
+            <p class="services__card--paragraph">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit
+              cumque, neque illo ducimus ea unde, eaque aut.
+            </p>
+          </div>
+          <div class="services__card">
+            <div class="services__card--logo">
+              <i class="bi bi-bounding-box"></i>
+            </div>
+            <h4 class="services__card--title">Diseño Grafico</h4>
+            <p class="services__card--paragraph">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit
+              cumque, neque illo ducimus ea unde, eaque aut.
+            </p>
+          </div>
+          <div class="services__card">
+            <div class="services__card--logo">
+              <i class="bi bi-pencil"></i>
+            </div>
+            <h4 class="services__card--title">UI/UX</h4>
+            <p class="services__card--paragraph">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit
+              cumque, neque illo ducimus ea unde, eaque aut.
+            </p>
+          </div>
+          <div class="services__card">
+            <div class="services__card--logo">
+              <i class="bi bi-phone-vibrate"></i>
+            </div>
+            <h4 class="services__card--title">Desarrollo movil</h4>
+            <p class="services__card--paragraph">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit
+              cumque, neque illo ducimus ea unde, eaque aut.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- NEWSLETTER COMPONENT -->
+      <section class="newsletter">
+        <h2 class="newsletter__title">Suscribete Para Ver Nuestras Ofertas</h2>
+        <p class="newsletter__paragraph">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum deleniti
+          quod veritatis
+        </p>
+        <div class="newsletter__inputs">
+          <form>
+            <input type="email" placeholder="Ingrese su email..." />
+            <button type="submit">Suscribirme</button>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script src="./js/app.js"></script>
   </body>
 </html>

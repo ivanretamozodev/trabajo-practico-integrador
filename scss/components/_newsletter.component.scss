@@ -1,0 +1,28 @@
+.newsletter {
+  background-color: $tertiary-color;
+  padding: 1rem;
+  border-radius: $border-radius;
+  max-width: $max-width;
+  &__title {
+    @include subtitle();
+  }
+  &__paragraph {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  &__inputs {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    form {
+      padding: 1rem;
+      input {
+        padding: 0.75rem 1.6rem;
+      }
+      button {
+        @include btn-primary();
+      }
+    }
+  }
+}
