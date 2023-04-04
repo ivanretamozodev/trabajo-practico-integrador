@@ -1,14 +1,15 @@
 .newsletter {
-  background-color: $tertiary-color;
+  background-color: $primary-color;
+  width: 100%;
   padding: 1rem;
-  border-radius: $border-radius;
-  max-width: $max-width;
   &__title {
     @include subtitle();
+    color: $white-color;
   }
   &__paragraph {
     font-size: 0.9rem;
     text-align: center;
+    color: $white-color;
   }
 
   &__inputs {
@@ -22,6 +23,7 @@
       }
       button {
         @include btn-primary();
+        background-color: $secondary-color;
       }
     }
   }

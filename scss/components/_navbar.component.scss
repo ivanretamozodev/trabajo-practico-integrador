@@ -1,5 +1,7 @@
 .nav {
   padding: 1rem;
+  width: 100%;
+  max-width: $max-width;
 
   .menu-nav {
     display: flex;

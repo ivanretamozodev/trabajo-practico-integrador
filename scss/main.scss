@@ -2,9 +2,12 @@
 
 @import "./variables/variables";
 @import "./mixins/mixins";
+@import "./utilities/reset";
 @import "./utilities/global";
 @import "./components/navbar.component";
 @import "./components/hero.component";
 @import "./components/trusted.component";
+@import "./components/help.component";
 @import "./components/services.component";
+@import "./components/grow.component";
 @import "./components/newsletter.component";
