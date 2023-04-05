@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;700&display=swap"); /* 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap"); /* 
     *COLORS
 */
 /* 
-    *OTHERS
+*OTHERS
 */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -321,13 +321,13 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f6f6fe;
-  color: #34355c;
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  color: hsl(239, 28%, 28%);
 }
 
 a {
-  color: #34355c;
+  color: hsl(239, 28%, 28%);
   text-decoration: none;
 }
 
@@ -340,6 +340,28 @@ ul {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+.btn-scroll {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  padding: 10px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  border: none;
+  outline: none;
+  background-color: #31a9fd;
+}
+.btn-scroll i {
+  color: #fff;
+  font-size: 24px;
+}
+.btn-scroll:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 header {
@@ -359,12 +381,12 @@ header .nav .menu-nav {
   gap: 1rem;
 }
 header .nav .menu-nav__item a:hover {
-  border-bottom: 1px solid #34355c;
+  border-bottom: 1px solid hsl(239, 28%, 28%);
 }
 header .nav .menu-nav__item button {
   padding: 0.75rem 1.25rem;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   background-color: #4d6bff;
   font-size: 1.2rem;
   color: #fff;
@@ -385,7 +407,7 @@ header .nav .menu-nav__item button:hover {
 .hero__text h2 {
   font-size: 2.5rem;
   letter-spacing: 1.5px;
-  color: #34355c;
+  color: hsl(239, 28%, 28%);
 }
 .hero__text p {
   margin: 2rem 0rem;
@@ -395,7 +417,7 @@ header .nav .menu-nav__item button:hover {
 .hero__text button {
   padding: 0.75rem 1.25rem;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   background-color: #4d6bff;
   font-size: 1.2rem;
   color: #fff;
@@ -412,22 +434,25 @@ header .nav .menu-nav__item button:hover {
 @media screen and (min-width: 768px) {
   .hero__image {
     display: block;
-    padding: 0rem 1.25rem;
+    padding: 0rem 1rem;
     position: relative;
+  }
+  .hero__image .img-principal {
+    max-width: 450px;
   }
   .hero__image .blob1 {
     position: absolute;
     bottom: 0rem;
-    width: 100%;
-    left: 0;
+    width: 70%;
+    left: 1rem;
     z-index: -1;
   }
   .hero__image .blob2 {
     position: absolute;
     width: 100%;
-    top: 1rem;
-    left: 0;
-    z-index: -5;
+    top: -2rem;
+    left: 3rem;
+    z-index: -2;
   }
 }
 .trusted {
@@ -452,14 +477,49 @@ header .nav .menu-nav__item button:hover {
   filter: grayscale(100%);
 }
 
-@media screen and (min-width: 768px) {
-  .trusted__logos {
-    gap: 2rem;
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  .trusted__logos img {
-    width: 100px;
+  100% {
+    transform: translateX(-1750px);
   }
 }
+.slider {
+  background: #f6f6fe;
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slider::before, .slider::after {
+  background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: 3500px;
+}
+.slider .slide {
+  height: 100px;
+  width: 250px;
+}
+
 .help {
   width: 100%;
   max-width: 992px;
@@ -472,7 +532,7 @@ header .nav .menu-nav__item button:hover {
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
 }
 .help__text--title {
   font-size: 1.7rem;
@@ -490,7 +550,7 @@ header .nav .menu-nav__item button:hover {
 .help__text--button button {
   padding: 0.75rem 1.25rem;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   background-color: #4d6bff;
   font-size: 1.2rem;
   color: #fff;
@@ -509,20 +569,21 @@ header .nav .menu-nav__item button:hover {
     gap: 1rem;
   }
   .help__image {
-    width: 50%;
+    padding: 1rem;
+    width: 60%;
   }
   .help__text {
     padding: 1rem;
   }
   .help__text--title {
     font-size: 1.7rem;
-    text-align: left;
+    text-align: center;
   }
   .help__text--paragraph {
-    text-align: left;
+    text-align: center;
   }
   .help__text--button {
-    text-align: left;
+    text-align: center;
   }
 }
 .services {
@@ -543,14 +604,15 @@ header .nav .menu-nav__item button:hover {
   gap: 1rem;
 }
 .services-container .services__card {
-  border: 1px solid #bebebe;
-  border-radius: 0.4rem;
+  border: 1px solid #e9e9e9;
+  border-radius: 0.6rem;
   width: 320px;
   padding: 3rem 0.5rem;
+  box-shadow: 15px 15px 30px -18px #e9e9e9;
 }
 .services-container .services__card--logo {
   text-align: center;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   margin-bottom: 1rem;
 }
 .services-container .services__card--logo i {
@@ -590,7 +652,7 @@ header .nav .menu-nav__item button:hover {
 .grow__text--button button {
   padding: 0.75rem 1.25rem;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   background-color: #4d6bff;
   font-size: 1.2rem;
   color: #fff;
@@ -613,15 +675,16 @@ header .nav .menu-nav__item button:hover {
 
 .item {
   min-height: 140px;
-  min-width: 140px;
-  border-radius: 0.4rem;
+  min-width: 200px;
+  border-radius: 0.6rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 15px 15px 30px -18px #e9e9e9;
   margin-bottom: 2rem;
-  border: 1px solid #bebebe;
+  border: 1px solid #e9e9e9;
 }
 .item__icon i {
   font-size: 2rem;
@@ -668,8 +731,8 @@ header .nav .menu-nav__item button:hover {
 .newsletter {
   background-color: #4d6bff;
   width: 100%;
-  max-width: 992px;
-  padding: 1rem;
+  /*   max-width: $max-width; */
+  padding: 5rem 0rem;
 }
 .newsletter__title {
   text-align: center;
@@ -697,7 +760,7 @@ header .nav .menu-nav__item button:hover {
 .newsletter__inputs form button {
   padding: 0.75rem 1.25rem;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   background-color: #4d6bff;
   font-size: 1.2rem;
   color: #fff;
@@ -707,4 +770,77 @@ header .nav .menu-nav__item button:hover {
 .newsletter__inputs form button:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+
+.testimonial {
+  width: 100%;
+  max-width: 992px;
+  padding: 1rem;
+}
+.testimonial__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.testimonial__text--title {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.testimonial__text--paragraph {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .testimonial .testimonial__text {
+    flex-direction: row;
+  }
+  .testimonial .testimonial__text--title {
+    max-width: 300px;
+    font-size: 1.7rem;
+  }
+  .testimonial .testimonial__text--paragraph {
+    max-width: 300px;
+  }
+  .card-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+  }
+  .card-container .card {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    border: 1px solid #e9e9e9;
+    box-shadow: 15px 15px 30px -18px #e9e9e9;
+    min-width: 320px;
+  }
+  .card-container .card__img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .card-container .card__title {
+    font-size: 1.2rem;
+    letter-spacing: 1.1px;
+    text-align: center;
+  }
+  .card-container .card__description {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .card-container .card__name {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    text-align: center;
+  }
 }/*# sourceMappingURL=main.css.map */

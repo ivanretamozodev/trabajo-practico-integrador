@@ -1,8 +1,8 @@
 .newsletter {
   background-color: $primary-color;
   width: 100%;
-  max-width: $max-width;
-  padding: 1rem;
+  /*   max-width: $max-width; */
+  padding: 5rem 0rem;
   &__title {
     @include subtitle();
     color: $white-color;

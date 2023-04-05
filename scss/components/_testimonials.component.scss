@@ -1,0 +1,70 @@
+.testimonial {
+  width: 100%;
+  max-width: $max-width;
+  padding: 1rem;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    &--title {
+      @include subtitle();
+    }
+    &--paragraph {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .testimonial {
+    .testimonial__text {
+      flex-direction: row;
+      &--title {
+        max-width: 300px;
+        font-size: 1.7rem;
+      }
+      &--paragraph {
+        max-width: 300px;
+      }
+    }
+  }
+  .card-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 1rem;
+    .card {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      border-radius: $border-radius;
+      border: 1px solid $grey-color;
+      box-shadow: $box-shadow;
+      min-width: 320px;
+      &__img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      &__title {
+        font-size: 1.2rem;
+        letter-spacing: 1.1px;
+        text-align: center;
+      }
+      &__description {
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      &__name {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+        text-align: center;
+      }
+    }
+  }
+}

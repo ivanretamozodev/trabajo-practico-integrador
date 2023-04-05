@@ -4,13 +4,15 @@
 $primary-color: #4d6bff;
 $secondary-color: #31a9fd;
 $tertiary-color: #f6f6fe;
-$black-color: #34355c;
-$grey-color: #bebebe;
+$black-color: hsl(239, 28%, 28%);
+$grey-color: #e9e9e9;
 $white-color: #fff;
 
 /* 
-    *OTHERS
+*OTHERS
 */
 
-$border-radius: 0.4rem;
+$box-shadow: 15px 15px 30px -18px $grey-color;
+$border-radius: 0.6rem;
+$animationSpeed: 40s;
 $max-width: 992px;
