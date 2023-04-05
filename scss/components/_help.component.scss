@@ -1,4 +1,6 @@
 .help {
+  width: 100%;
+  max-width: $max-width;
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -43,7 +45,7 @@
     &__text {
       padding: 1rem;
       &--title {
-        font-size: 2rem;
+        font-size: 1.7rem;
         text-align: left;
       }
 

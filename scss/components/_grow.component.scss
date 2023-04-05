@@ -1,5 +1,6 @@
 .grow {
   width: 100%;
+  max-width: $max-width;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -41,7 +42,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+
   margin-bottom: 2rem;
   border: 1px solid $grey-color;
   &__icon {
@@ -62,6 +63,7 @@
 .item-active {
   background-color: $secondary-color;
   color: $white-color;
+  border: none;
 }
 .white {
   color: $white-color !important;

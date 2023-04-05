@@ -1,20 +1,24 @@
-.nav {
-  padding: 1rem;
+header {
   width: 100%;
   max-width: $max-width;
-
-  .menu-nav {
+  .nav {
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    .menu-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
 
-    &__item {
-      a:hover {
-        border-bottom: 1px solid $black-color;
-      }
-      button {
-        @include btn-primary;
+      &__item {
+        a:hover {
+          border-bottom: 1px solid $black-color;
+        }
+        button {
+          @include btn-primary;
+        }
       }
     }
   }
