@@ -692,7 +692,7 @@ header .nav .menu-nav__item button:hover {
   color: #31a9fd;
 }
 .item__title {
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-align: center;
 }
 .item__numbers {
