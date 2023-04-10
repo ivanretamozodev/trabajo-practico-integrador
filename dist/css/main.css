@@ -335,6 +335,14 @@ ul {
   list-style: none;
 }
 
+.success {
+  background-color: #01c851;
+}
+
+.danger {
+  background-color: #fe4543;
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -344,8 +352,8 @@ ul {
 
 .btn-scroll {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 2rem;
+  right: 2rem;
   z-index: 999;
   padding: 10px;
   border-radius: 50%;
@@ -362,6 +370,18 @@ ul {
 .btn-scroll:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+.feedback {
+  border-radius: 0.6rem;
+  padding: 0.5rem;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  display: none;
+}
+.feedback__text {
+  color: #fff;
 }
 
 header {
@@ -770,6 +790,10 @@ header .nav .menu-nav__item button:hover {
 .newsletter__inputs form button:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+.newsletter__error {
+  text-align: center;
+  color: red;
 }
 
 .testimonial {

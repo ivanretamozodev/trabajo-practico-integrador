@@ -1,6 +1,9 @@
+const btnSubs = document.getElementById("subs");
+const URL_BASE = "http://localhost:3000";
+
 /*
- *Fetching de datos.
- */
+ *=============== fetching de tarjetas =========== */
+
 const createReviewsCards = (reviewArr) => {
   let cardContainer = document.getElementById("card-container");
   //Recorriendo el array
@@ -14,6 +17,7 @@ const createReviewsCards = (reviewArr) => {
     cardTitle.classList.add("card__title");
     cardTitle.textContent = item.title;
     const cardDescription = document.createElement("p");
+    cardDescription.classList.add("card__description");
     cardDescription.textContent = item.description;
     const cardName = document.createElement("h5");
     cardName.classList.add("card__name");
@@ -31,12 +35,11 @@ const createReviewsCards = (reviewArr) => {
 
     //insertando la carta en el contenedor
     cardContainer.appendChild(card);
-    console.log(reviewArr);
   });
 };
 
 const fetchReviews = () => {
-  fetch("http://localhost:3000/reviews")
+  fetch(`${URL_BASE}/reviews`)
     .then((data) => data.json())
     .then((data) => createReviewsCards(data.reviews));
 };
@@ -44,8 +47,48 @@ const fetchReviews = () => {
 fetchReviews();
 
 /*
- *boton de scroll
- */
+ *=============== post suscripcion =========== */
+
+const feedbackNewsletter = (msg, classname, time) => {
+  const feedback = document.querySelector(".feedback");
+  const feedbackText = document.querySelector(".feedback__text");
+  feedback.style.display = "block";
+  feedback.classList.add(`${classname}`);
+  feedbackText.textContent = msg;
+  setTimeout(() => {
+    feedback.style.display = "none";
+    feedback.classList.remove(`${classname}`);
+  }, time);
+};
+
+const fetchNewsletter = (email) => {
+  fetch(`${URL_BASE}/subscription`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(email),
+  })
+    .then((response) => response.json())
+    .then((data) =>
+      data.success
+        ? feedbackNewsletter("Te enviamos un email ✔", "success", 3000)
+        : feedbackNewsletter(data.errors.email.msg, "danger", 3000)
+    );
+};
+
+const subscribeMail = (email) => {
+  fetchNewsletter({ email });
+};
+
+btnSubs.addEventListener("click", (e) => {
+  e.preventDefault();
+  const { value } = document.getElementById("newsletterEmail");
+  subscribeMail(value);
+});
+
+/*
+ *=============== boton de scroll =========== */
 
 const btnScroll = document.getElementById("btn-scroll");
 

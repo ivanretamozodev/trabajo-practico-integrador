@@ -4,8 +4,8 @@
 
 @mixin btn-scroll() {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 2rem;
+  right: 2rem;
   z-index: 999;
   padding: 10px;
   border-radius: 50%;

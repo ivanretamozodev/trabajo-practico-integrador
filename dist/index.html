@@ -300,9 +300,13 @@
           por nuestros profesionales.
         </p>
         <div class="newsletter__inputs">
-          <form>
-            <input type="email" placeholder="Ingrese su email..." />
-            <button type="submit">Suscribirme</button>
+          <form onsubmit="subscribeMail(e)">
+            <input
+              id="newsletterEmail"
+              type="email"
+              placeholder="Ingrese su email..."
+            />
+            <button id="subs" type="submit">Suscribirme</button>
           </form>
         </div>
       </section>
@@ -322,7 +326,10 @@
         <i class="bi bi-arrow-up"></i>
       </button>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div class="feedback">
+      <p class="feedback__text">debes introducir un mail valido</p>
+    </div>
+
     <script src="./js/app.js"></script>
   </body>
 </html>

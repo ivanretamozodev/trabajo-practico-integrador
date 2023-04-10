@@ -1,0 +1,11 @@
+.feedback {
+  border-radius: $border-radius;
+  padding: 0.5rem;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  display: none;
+  &__text {
+    color: $white-color;
+  }
+}
