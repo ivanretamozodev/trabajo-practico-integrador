@@ -72,7 +72,11 @@ const fetchNewsletter = (email) => {
     .then((response) => response.json())
     .then((data) =>
       data.success
-        ? feedbackNewsletter("Te enviamos un email ✔", "success", 3000)
+        ? feedbackNewsletter(
+            "Recibirá un email con nuestras ofertas ✔",
+            "success",
+            3000
+          )
         : feedbackNewsletter(data.errors.email.msg, "danger", 3000)
     );
 };
