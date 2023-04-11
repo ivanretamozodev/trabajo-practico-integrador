@@ -56,6 +56,14 @@
         letter-spacing: 1.1px;
         text-align: center;
       }
+      &__rating {
+        display: flex;
+        gap: 1rem;
+        i {
+          font-size: 1.2rem;
+          color: $primary-color;
+        }
+      }
       &__description {
         font-size: 0.9rem;
         text-align: center;

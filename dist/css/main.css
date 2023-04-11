@@ -858,6 +858,14 @@ header .nav .menu-nav__item button:hover {
     letter-spacing: 1.1px;
     text-align: center;
   }
+  .card-container .card__rating {
+    display: flex;
+    gap: 1rem;
+  }
+  .card-container .card__rating i {
+    font-size: 1.2rem;
+    color: #4d6bff;
+  }
   .card-container .card__description {
     font-size: 0.9rem;
     text-align: center;

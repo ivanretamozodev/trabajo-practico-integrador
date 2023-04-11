@@ -4,6 +4,17 @@ const URL_BASE = "http://localhost:3000";
 /*
  *=============== fetching de tarjetas =========== */
 
+const getCardsStars = (rating) => {
+  const cardStars = document.createElement("div");
+  cardStars.classList.add("card__rating");
+  for (let i = 0; i < 5; i++) {
+    const cardStar = document.createElement("i");
+    cardStar.classList.add("bi", "bi-star-fill");
+    cardStars.appendChild(cardStar);
+  }
+  return cardStars;
+};
+
 const createReviewsCards = (reviewArr) => {
   let cardContainer = document.getElementById("card-container");
   //Recorriendo el array
@@ -16,6 +27,9 @@ const createReviewsCards = (reviewArr) => {
     const cardTitle = document.createElement("h5");
     cardTitle.classList.add("card__title");
     cardTitle.textContent = item.title;
+
+    const cardStars = getCardsStars(item.calification);
+
     const cardDescription = document.createElement("p");
     cardDescription.classList.add("card__description");
     cardDescription.textContent = item.description;
@@ -29,6 +43,7 @@ const createReviewsCards = (reviewArr) => {
     //CREANDO LA CARTA
     card.appendChild(cardImage);
     card.appendChild(cardTitle);
+    card.appendChild(cardStars);
     card.appendChild(cardDescription);
     card.appendChild(cardName);
     card.appendChild(cardCostumer);
