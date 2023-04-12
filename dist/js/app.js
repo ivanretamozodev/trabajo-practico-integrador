@@ -2,6 +2,37 @@ const btnSubs = document.getElementById("subs");
 const URL_BASE = "http://localhost:3000";
 
 /*
+ *=============== fetching de projectos =========== */
+
+const createProjectContainer = (data) => {
+  const container = document.querySelector(".proyects__container");
+
+  data.forEach((project) => {
+    const image = document.createElement("img");
+    image.setAttribute("src", project.imageUrl);
+    image.setAttribute("alt", project.alt);
+    container.appendChild(image);
+  });
+  console.log(container);
+
+  // data.forEach((project) => {
+  //const imgProject = document.createElement("img");
+  // imgProject.setAttribute("src", project.imageUrl);
+  // container.appendChild(imgProject);
+  //});
+};
+
+const fetchProjects = () => {
+  try {
+    fetch(`${URL_BASE}/projects`)
+      .then((data) => data.json())
+      .then((data) => createProjectContainer(data.projects));
+  } catch (e) {}
+};
+
+fetchProjects();
+
+/*
  *=============== fetching de tarjetas =========== */
 
 const getCardsStars = (rating) => {
@@ -54,9 +85,13 @@ const createReviewsCards = (reviewArr) => {
 };
 
 const fetchReviews = () => {
-  fetch(`${URL_BASE}/reviews`)
-    .then((data) => data.json())
-    .then((data) => createReviewsCards(data.reviews));
+  try {
+    fetch(`${URL_BASE}/reviews`)
+      .then((data) => data.json())
+      .then((data) => createReviewsCards(data.reviews));
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 fetchReviews();

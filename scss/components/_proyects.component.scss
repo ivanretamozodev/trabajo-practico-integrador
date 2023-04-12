@@ -1,0 +1,21 @@
+.proyects {
+  width: 100%;
+  max-width: $max-width;
+  padding: 1rem;
+
+  &__title {
+    @include subtitle();
+  }
+
+  &__container {
+    display: flex;
+    gap: 1rem;
+    img {
+      display: inline-block;
+      max-width: 320px;
+      object-fit: cover;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+    }
+  }
+}
