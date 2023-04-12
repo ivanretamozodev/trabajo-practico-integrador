@@ -1,25 +1,17 @@
 const btnSubs = document.getElementById("subs");
-const URL_BASE = "http://localhost:3000";
+const URL_BASE = "http://3.139.233.198:3000";
 
 /*
  *=============== fetching de projectos =========== */
 
 const createProjectContainer = (data) => {
   const container = document.querySelector(".proyects__container");
-
   data.forEach((project) => {
     const image = document.createElement("img");
     image.setAttribute("src", project.imageUrl);
     image.setAttribute("alt", project.alt);
     container.appendChild(image);
   });
-  console.log(container);
-
-  // data.forEach((project) => {
-  //const imgProject = document.createElement("img");
-  // imgProject.setAttribute("src", project.imageUrl);
-  // container.appendChild(imgProject);
-  //});
 };
 
 const fetchProjects = () => {
