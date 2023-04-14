@@ -387,9 +387,9 @@ ul {
 header {
   width: 100%;
   max-width: 992px;
+  padding: 0rem 1rem;
 }
 header .nav {
-  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -775,8 +775,8 @@ header .nav .menu-nav__item button:hover {
 .newsletter {
   background-color: #4d6bff;
   width: 100%;
-  /*   max-width: $max-width; */
-  padding: 5rem 0rem;
+  max-width: 992px;
+  padding: 5rem 1rem;
 }
 .newsletter__title {
   text-align: center;
@@ -899,4 +899,14 @@ header .nav .menu-nav__item button:hover {
     margin-bottom: 0;
     text-align: center;
   }
+}
+footer {
+  padding: 0rem;
+  width: 100%;
+  background-color: #4d6bff;
+}
+footer h3 {
+  color: #fff;
+  text-align: center;
+  font-size: 1.1rem;
 }/*# sourceMappingURL=main.css.map */

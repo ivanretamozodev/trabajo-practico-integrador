@@ -30,7 +30,7 @@ fetchProjects();
 const getCardsStars = (rating) => {
   const cardStars = document.createElement("div");
   cardStars.classList.add("card__rating");
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < rating; i++) {
     const cardStar = document.createElement("i");
     cardStar.classList.add("bi", "bi-star-fill");
     cardStars.appendChild(cardStar);
