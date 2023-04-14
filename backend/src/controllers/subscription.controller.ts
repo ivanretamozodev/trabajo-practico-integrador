@@ -5,7 +5,7 @@ import * as emailer from '../config/emailer';
 const postItem = async (req: Request, res: Response) => {
   try {
     const { email } = req.body;
-    emailer.sendMail(email);
+    emailer.sendMail(email, 'Suscripcion Exitosa');
     res.status(200).json({ success: true });
   } catch (e) {
     handleHttp(res, 'ERROR_POST_ITEMS', e);

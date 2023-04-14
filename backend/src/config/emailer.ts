@@ -17,13 +17,13 @@ const createTransporter = () => {
   return transport;
 };
 
-export const sendMail = async (email: string) => {
+export const sendMail = async (email: string, subject: string) => {
   try {
     const transporter = createTransporter();
     const info = await transporter.sendMail({
       from: `<retamozoi445@gmail.com>`,
       to: [`${email}`],
-      subject: `Suscripción Exitosa`,
+      subject,
       html: templateEmail,
     });
     console.log(`Message Sent: `, info.messageId);
