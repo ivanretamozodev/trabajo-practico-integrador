@@ -1,5 +1,5 @@
 const btnSubs = document.getElementById("subs");
-const URL_BASE = "http://3.139.233.198:3000";
+const URL_BASE = "https://sffsdf-ivanretamozodev.vercel.app";
 const URL_BASE_DEVELOPMENT = "http://localhost:3000";
 
 /*
