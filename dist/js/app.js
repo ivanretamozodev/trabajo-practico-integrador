@@ -1,6 +1,6 @@
 const btnSubs = document.getElementById("subs");
-//const URL_BASE = "http://3.139.233.198:3000";
-const URL_BASE = "http://localhost:3000";
+const URL_BASE = "http://3.139.233.198:3000";
+const URL_BASE_DEVELOPMENT = "http://localhost:3000";
 
 /*
  *=============== fetching de projectos =========== */
@@ -105,6 +105,7 @@ const feedback = (msg, classname, time) => {
 };
 
 const handleSuscriptionErrors = (error) => {
+  console.log(error);
   error.forEach((error) => feedback(error.msg, "danger", 3500));
 };
 
