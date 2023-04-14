@@ -3,6 +3,7 @@
   width: 100%;
   max-width: $max-width;
   padding: 5rem 1rem;
+  border-radius: $border-radius;
   &__title {
     @include subtitle();
     color: $white-color;

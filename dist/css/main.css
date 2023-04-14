@@ -777,6 +777,7 @@ header .nav .menu-nav__item button:hover {
   width: 100%;
   max-width: 992px;
   padding: 5rem 1rem;
+  border-radius: 0.6rem;
 }
 .newsletter__title {
   text-align: center;
@@ -900,6 +901,70 @@ header .nav .menu-nav__item button:hover {
     text-align: center;
   }
 }
+.contact {
+  width: 100%;
+  max-width: 992px;
+  padding: 1rem;
+  background-color: #e9e9e9;
+  box-shadow: 15px 15px 30px -18px #e9e9e9;
+  border-radius: 0.6rem;
+}
+.contact h2 {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.contact p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.contact .contact__form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.contact .contact__form-block {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.contact .btn-send {
+  background-color: #4d6bff;
+  color: #fff;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  border: 1px solid hsl(239, 28%, 28%);
+  transition: all 0.3s ease-in-out;
+}
+.contact .btn-send:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.input-wrapper label {
+  margin: 0.5rem 0rem;
+}
+.input-wrapper input {
+  padding: 0.5rem;
+  max-width: 600px;
+  border-radius: 0.6rem;
+  border: 1px solid hsl(239, 28%, 28%);
+  box-shadow: 15px 15px 30px -18px #e9e9e9;
+}
+.input-wrapper textarea {
+  padding: 0.5rem;
+  border-radius: 0.6rem;
+  box-shadow: 15px 15px 30px -18px #e9e9e9;
+  border: 1px solid hsl(239, 28%, 28%);
+}
+
 footer {
   padding: 0rem;
   width: 100%;

@@ -1,5 +1,6 @@
 const btnSubs = document.getElementById("subs");
-const URL_BASE = "http://3.139.233.198:3000";
+//const URL_BASE = "http://3.139.233.198:3000";
+const URL_BASE = "http://localhost:3000";
 
 /*
  *=============== fetching de projectos =========== */
@@ -91,7 +92,7 @@ fetchReviews();
 /*
  *=============== post suscripcion =========== */
 
-const feedbackNewsletter = (msg, classname, time) => {
+const feedback = (msg, classname, time) => {
   const feedback = document.querySelector(".feedback");
   const feedbackText = document.querySelector(".feedback__text");
   feedback.style.display = "block";
@@ -101,6 +102,10 @@ const feedbackNewsletter = (msg, classname, time) => {
     feedback.style.display = "none";
     feedback.classList.remove(`${classname}`);
   }, time);
+};
+
+const handleSuscriptionErrors = (error) => {
+  error.forEach((error) => feedback(error.msg, "danger", 3500));
 };
 
 const fetchNewsletter = (email) => {
@@ -114,12 +119,8 @@ const fetchNewsletter = (email) => {
     .then((response) => response.json())
     .then((data) =>
       data.success
-        ? feedbackNewsletter(
-            "Recibirá un email con nuestras ofertas ✔",
-            "success",
-            3000
-          )
-        : feedbackNewsletter(data.errors.email.msg, "danger", 3000)
+        ? feedback("Recibirá un email con nuestras ofertas ✔", "success", 3000)
+        : handleSuscriptionErrors(data.errors)
     );
 };
 
@@ -131,6 +132,59 @@ btnSubs.addEventListener("click", (e) => {
   e.preventDefault();
   const { value } = document.getElementById("newsletterEmail");
   subscribeMail(value);
+});
+
+/*
+ *=============== Post de Formulario =========== */
+
+const btnSend = document.getElementById("btn-form");
+
+const handleFormErrors = (errors) => {
+  errors.forEach((error) => feedback(error.msg, "danger", 3500));
+};
+
+const fetchFormData = (data) => {
+  fetch(`${URL_BASE}/messages`, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((res) =>
+      res.success
+        ? feedback(
+            "Gracias,Nos Pondremos en contacto a la brevedad",
+            "success",
+            3500
+          )
+        : handleFormErrors(res.errors)
+    )
+    .catch((e) => {
+      console.log(e);
+    });
+};
+
+const extractFormData = () => {
+  const { value: email } = document.getElementById("email");
+  const { value: name } = document.getElementById("name");
+  const { value: phone } = document.getElementById("phone");
+  const { value: message } = document.getElementById("message");
+
+  const data = {
+    email,
+    name,
+    phone,
+    message,
+  };
+
+  fetchFormData(data);
+};
+
+btnSend.addEventListener("click", (e) => {
+  e.preventDefault();
+  extractFormData();
 });
 
 /*
