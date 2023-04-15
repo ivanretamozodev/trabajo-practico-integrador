@@ -553,6 +553,8 @@ header .nav .menu-nav__item button:hover {
 }
 .proyects__container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
 }
 .proyects__container img {
@@ -562,6 +564,13 @@ header .nav .menu-nav__item button:hover {
      object-fit: cover;
   border-radius: 0.6rem;
   box-shadow: 15px 15px 30px -18px #e9e9e9;
+  transition: all 0.3s ease-in-out;
+}
+.proyects__container img:hover {
+  transform: scale(1.05);
+}
+.proyects__container:hover {
+  cursor: pointer;
 }
 
 .services {
@@ -824,7 +833,6 @@ header .nav .menu-nav__item button:hover {
 .testimonial {
   width: 100%;
   max-width: 992px;
-  padding: 1rem;
 }
 .testimonial__text {
   display: flex;
@@ -841,70 +849,87 @@ header .nav .menu-nav__item button:hover {
 .testimonial__text--paragraph {
   text-align: center;
 }
+.testimonial .card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+}
+.testimonial .card-container .card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.6rem;
+  border: 1px solid #e9e9e9;
+  box-shadow: 15px 15px 30px -18px #e9e9e9;
+  min-width: 320px;
+}
+.testimonial .card-container .card__img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.testimonial .card-container .card__title {
+  font-size: 1.2rem;
+  letter-spacing: 1.1px;
+  text-align: center;
+}
+.testimonial .card-container .card__rating {
+  display: flex;
+  gap: 1rem;
+}
+.testimonial .card-container .card__rating i {
+  font-size: 1.2rem;
+  color: #4d6bff;
+}
+.testimonial .card-container .card__description {
+  font-size: 0.9rem;
+  text-align: center;
+}
+.testimonial .card-container .card__name {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  text-align: center;
+}
 
 @media screen and (min-width: 768px) {
-  .testimonial .testimonial__text {
+  .testimonial__text {
     flex-direction: row;
   }
-  .testimonial .testimonial__text--title {
-    max-width: 300px;
+  .testimonial__text--title {
+    text-align: center;
     font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
   }
-  .testimonial .testimonial__text--paragraph {
-    max-width: 300px;
+  .testimonial__text--paragraph {
+    text-align: center;
   }
-  .card-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 1rem;
+  .testimonial .card-container {
+    flex-wrap: nowrap;
   }
-  .card-container .card {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+  .testimonial .card-container .card {
     border-radius: 0.6rem;
     border: 1px solid #e9e9e9;
     box-shadow: 15px 15px 30px -18px #e9e9e9;
-    min-width: 320px;
+    max-width: 320px;
   }
-  .card-container .card__img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    -o-object-fit: cover;
-       object-fit: cover;
+  .testimonial .card-container .card__title {
+    font-size: 1.3rem;
   }
-  .card-container .card__title {
-    font-size: 1.2rem;
-    letter-spacing: 1.1px;
-    text-align: center;
-  }
-  .card-container .card__rating {
-    display: flex;
-    gap: 1rem;
-  }
-  .card-container .card__rating i {
-    font-size: 1.2rem;
-    color: #4d6bff;
-  }
-  .card-container .card__description {
-    font-size: 0.9rem;
-    text-align: center;
-  }
-  .card-container .card__name {
-    font-size: 1.2rem;
-    margin-bottom: 0;
-    text-align: center;
+  .testimonial .card-container .card__name {
+    font-size: 1.4rem;
   }
 }
 .contact {
   width: 100%;
   max-width: 992px;
-  padding: 1rem;
   background-color: #e9e9e9;
   box-shadow: 15px 15px 30px -18px #e9e9e9;
   border-radius: 0.6rem;
@@ -929,7 +954,7 @@ header .nav .menu-nav__item button:hover {
 .contact .contact__form-block {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
 }
 .contact .btn-send {
   background-color: #4d6bff;
@@ -937,6 +962,7 @@ header .nav .menu-nav__item button:hover {
   border-radius: 0.6rem;
   padding: 1rem;
   border: 1px solid hsl(239, 28%, 28%);
+  margin-bottom: 1rem;
   transition: all 0.3s ease-in-out;
 }
 .contact .btn-send:hover {
@@ -947,24 +973,36 @@ header .nav .menu-nav__item button:hover {
 .input-wrapper {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 }
 .input-wrapper label {
   margin: 0.5rem 0rem;
 }
 .input-wrapper input {
   padding: 0.5rem;
-  max-width: 600px;
-  border-radius: 0.6rem;
+  max-width: 800px;
   border: 1px solid hsl(239, 28%, 28%);
   box-shadow: 15px 15px 30px -18px #e9e9e9;
 }
 .input-wrapper textarea {
   padding: 0.5rem;
-  border-radius: 0.6rem;
   box-shadow: 15px 15px 30px -18px #e9e9e9;
   border: 1px solid hsl(239, 28%, 28%);
 }
 
+@media screen and (min-width: 768px) {
+  .contact .contact__form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact .contact__form-block {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
 footer {
   padding: 0rem;
   width: 100%;

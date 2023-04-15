@@ -1,7 +1,6 @@
 .contact {
   width: 100%;
   max-width: $max-width;
-  padding: 1rem;
   background-color: $grey-color;
   box-shadow: $box-shadow;
   border-radius: $border-radius;
@@ -21,7 +20,7 @@
     &-block {
       display: flex;
       justify-content: space-between;
-      flex-direction: row;
+      flex-direction: column;
     }
   }
   .btn-send {
@@ -30,6 +29,7 @@
     border-radius: $border-radius;
     padding: 1rem;
     border: 1px solid $black-color;
+    margin-bottom: 1rem;
     @include transition-ease();
     &:hover {
       cursor: pointer;
@@ -41,20 +41,36 @@
 .input-wrapper {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
   label {
     margin: 0.5rem 0rem;
   }
   input {
     padding: 0.5rem;
-    max-width: 600px;
-    border-radius: $border-radius;
+    max-width: 800px;
     border: 1px solid $black-color;
     box-shadow: $box-shadow;
   }
   textarea {
     padding: 0.5rem;
-    border-radius: $border-radius;
     box-shadow: $box-shadow;
     border: 1px solid $black-color;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact {
+    .contact__form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+
+      &-block {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+      }
+    }
   }
 }

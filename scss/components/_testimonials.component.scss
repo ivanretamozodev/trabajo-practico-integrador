@@ -1,7 +1,6 @@
 .testimonial {
   width: 100%;
   max-width: $max-width;
-  padding: 1rem;
   &__text {
     display: flex;
     flex-direction: column;
@@ -14,25 +13,11 @@
       text-align: center;
     }
   }
-}
-
-@media screen and (min-width: 768px) {
-  .testimonial {
-    .testimonial__text {
-      flex-direction: row;
-      &--title {
-        max-width: 300px;
-        font-size: 1.7rem;
-      }
-      &--paragraph {
-        max-width: 300px;
-      }
-    }
-  }
   .card-container {
     display: flex;
     justify-content: center;
-    width: 100%;
+    flex-wrap: wrap;
+    padding: 1rem;
     gap: 1rem;
     .card {
       margin: 0;
@@ -40,6 +25,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       padding: 1rem;
       border-radius: $border-radius;
       border: 1px solid $grey-color;
@@ -72,6 +58,38 @@
         font-size: 1.2rem;
         margin-bottom: 0;
         text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .testimonial {
+    &__text {
+      flex-direction: row;
+
+      &--title {
+        @include subtitle();
+      }
+      &--paragraph {
+        text-align: center;
+      }
+    }
+    .card-container {
+      flex-wrap: nowrap;
+      .card {
+        border-radius: $border-radius;
+        border: 1px solid $grey-color;
+        box-shadow: $box-shadow;
+        max-width: 320px;
+
+        &__title {
+          font-size: 1.3rem;
+        }
+
+        &__name {
+          font-size: 1.4rem;
+        }
       }
     }
   }
