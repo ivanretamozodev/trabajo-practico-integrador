@@ -92,6 +92,8 @@ fetchReviews();
 /*
  *=============== post suscripcion =========== */
 
+const timeFeedback = 3500;
+
 const feedback = (msg, classname, time) => {
   const feedback = document.querySelector(".feedback");
   const feedbackText = document.querySelector(".feedback__text");
@@ -106,7 +108,7 @@ const feedback = (msg, classname, time) => {
 
 const handleSuscriptionErrors = (error) => {
   console.log(error);
-  error.forEach((error) => feedback(error.msg, "danger", 3500));
+  error.forEach((error) => feedback(error.msg, "danger", timeFeedback));
 };
 
 const fetchNewsletter = (email) => {
@@ -120,7 +122,11 @@ const fetchNewsletter = (email) => {
     .then((response) => response.json())
     .then((data) =>
       data.success
-        ? feedback("Recibirá un email con nuestras ofertas ✔", "success", 3000)
+        ? feedback(
+            "Recibirá un email con nuestras ofertas ✔",
+            "success",
+            timeFeedback
+          )
         : handleSuscriptionErrors(data.errors)
     );
 };
@@ -141,7 +147,7 @@ btnSubs.addEventListener("click", (e) => {
 const btnSend = document.getElementById("btn-form");
 
 const handleFormErrors = (errors) => {
-  errors.forEach((error) => feedback(error.msg, "danger", 3500));
+  errors.forEach((error) => feedback(error.msg, "danger", timeFeedback));
 };
 
 const fetchFormData = (data) => {
@@ -158,7 +164,7 @@ const fetchFormData = (data) => {
         ? feedback(
             "Gracias,Nos Pondremos en contacto a la brevedad",
             "success",
-            3500
+            timeFeedback
           )
         : handleFormErrors(res.errors)
     )
